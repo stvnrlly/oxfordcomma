@@ -1,17 +1,25 @@
 body {
-  padding-top: 200px;
+  padding-top: 150px;
   background-color: #eee;
 }
 
+#stats {
+  padding-top: 50px;
+}
+
 .title {
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
   background-color: blue;
   color: #eee;
   font-size: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .number {
   padding: 50px;
   background-color: #ebe;
   font-size: 70px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
