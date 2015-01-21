@@ -1,0 +1,12 @@
+{
+  "name": "oxfordcomma",
+  "version": "1.0.0",
+  "description": "How many comma",
+  "main": "index.js",
+  "author": "stvnrlly",
+  "license": "cc0",
+  "dependencies": {
+    "express": "^4.11.0",
+    "twit": "^1.1.19"
+  }
+}

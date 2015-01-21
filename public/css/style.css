@@ -1,0 +1,17 @@
+body {
+  padding-top: 200px;
+  background-color: #eee;
+}
+
+.title {
+  padding: 20px;
+  background-color: blue;
+  color: #eee;
+  font-size: 50px;
+}
+
+.number {
+  padding: 50px;
+  background-color: #ebe;
+  font-size: 70px;
+}

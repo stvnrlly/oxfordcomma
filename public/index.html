@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Oxford Comma</title>
+  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Oxford Comma</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div id="stats" class="row">
+      <div class="col-sm-6 text-center">
+        <div class="title">Yes</div>
+        <div id="yes" class="number"></div>
+      </div>
+      <div class="col-sm-6 text-center">
+        <div class="title">No</div>
+        <div id="no" class="number"></div>
+      </div>
+    </div>
+
+  </div><!-- /.container -->
+
+</body>
+<script charset="utf-8">
+  $.getJSON("./count.json", function(data) {
+    $("#yes").text(data["yes"]);
+    $("#no").text(data["no"]);
+  })
+  var interval = setInterval(function(){
+    $.getJSON("./count.json", function(data) {
+      $("#yes").text(data["yes"]);
+      $("#no").text(data["no"]);
+    })
+  }, 1000)
+</script>
