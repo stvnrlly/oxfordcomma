@@ -1,6 +1,7 @@
 var express = require('express')
 var Twit = require('twit')
 var fs = require('fs')
+var count = require('./public/count.json')
 
 var app = express()
 app.use(express.static(__dirname + '/public'))
@@ -11,8 +12,6 @@ var twit = new Twit({
   consumer_key: process.env.CONSUMER_KEY,
   consumer_secret: process.env.CONSUMER_SECRET
 });
-
-var count = JSON.parse(fs.readFileSync('./public/count.json', 'utf8'))
 
 app.get('/', function (req, res) {
   res.render('index')
@@ -29,11 +28,11 @@ stream.on('tweet', function (tweet) {
     count['yes'] += 1
     console.log(tweet['text'])
     console.log(count)
-    fs.writeFileSync('./public/count.json', JSON.stringify(count))
+    fs.writeFile('./public/count.json', JSON.stringify(count), 'utf8')
   } else if (no.test(tweet['text'])) {
     count['no'] += 1
     console.log(tweet['text'])
     console.log(count)
-    fs.writeFileSync('./public/count.json', JSON.stringify(count))
+    fs.writeFile('./public/count.json', JSON.stringify(count), 'utf8')
   }
 })
