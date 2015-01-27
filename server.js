@@ -1,7 +1,12 @@
 var express = require('express')
 var Twit = require('twit')
 var fs = require('fs')
-var count = require('./public/count.json')
+
+try {
+  var count = require('./public/count.json')
+} catch(e) {
+  count = {"yes":0,"no":0}
+}
 
 var app = express()
 app.use(express.static(__dirname + '/public'))

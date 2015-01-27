@@ -4,12 +4,11 @@ This node app watches the Twitter stream to find tweets that do or don't use the
 
 ## Installation
 
-Get the repo, create a new JSON file, and pull the dependencies:
+Get the repo and pull the dependencies:
 
 ```
 git clone https://github.com/stvnrlly/oxfordcomma.git
 cd oxfordcomma
-mv count.json.template public/count.json
 npm install
 ```
 
