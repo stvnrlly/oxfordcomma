@@ -24,15 +24,18 @@
   </div><!-- /.container -->
 
 </body>
+<script src="https://cdn.socket.io/socket.io-1.1.0.js"></script>
 <script charset="utf-8">
-  $.getJSON("./count.json", function(data) {
-    $("#yes").text(data["yes"]);
-    $("#no").text(data["no"]);
-  })
-  var interval = setInterval(function(){
-    $.getJSON("./count.json", function(data) {
-      $("#yes").text(data["yes"]);
-      $("#no").text(data["no"]);
-    })
-  }, 1000)
+$(document).ready(function(){
+var socket = io.connect('http://localhost');
+socket.on('yes', function (data) {
+    console.log(data);
+    $('#yes').text(data);
+});
+socket.on('no', function (data) {
+    console.log(data);
+    $('#no').text(data);
+});
+socket.emit('ready', 'hello');
+});
 </script>

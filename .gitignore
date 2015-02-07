@@ -1,6 +1,3 @@
-# The running tally
-public/count.json
-
 # Logs
 logs
 *.log
@@ -19,3 +16,6 @@ npm-debug.log
 
 # Config vars
 .env
+
+# Test database
+db
