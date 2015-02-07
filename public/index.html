@@ -27,7 +27,7 @@
 <script src="https://cdn.socket.io/socket.io-1.1.0.js"></script>
 <script charset="utf-8">
 $(document).ready(function(){
-var socket = io.connect('http://localhost');
+var socket = io.connect(window.location.hostname);
 socket.on('yes', function (data) {
     console.log(data);
     $('#yes').text(data);
